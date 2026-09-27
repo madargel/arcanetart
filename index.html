@@ -9,17 +9,17 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body, html { background: var(--matte-black); color: #ffffff; font-family: 'SF Mono', 'Roboto Mono', monospace; overflow-x: hidden; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
         
-        /* ТВОЙ СУВЕРЕННЫЙ ФОН ИЗ ЛЕОНАРДО (ИСПРАВЛЕНО ИМЯ) */
+        /* ТВОЙ СУВЕРЕННЫЙ ФОН ИЗ ЛЕОНАРДО (ИСПРАВЛЕНО НА BG.JPG) */
         .universe-bg {
             position: fixed; top: -5%; left: -5%; width: 110vw; height: 110vh; z-index: -3;
-            background-image: url('bg.jpg.jpg');
+            background-image: url('bg.jpg');
             background-size: cover; background-position: center;
             filter: saturate(2.8) contrast(1.5) brightness(0.45);
             pointer-events: none;
             animation: deepSpaceOrbit 25s infinite alternate ease-in-out;
         }
         
-        /* ЖИВОЙ ШТОРМ НЕОНОВЫХ ЛИНИЙ И ТРАССЕРОВ НА CSS (ВМЕСТО СКРИПТОВ) */
+        /* ЖИВОЙ ШТОРМ НЕОНОВЫХ ЛИНИЙ И ТРАССЕРОВ НА CSS */
         .neon-storm {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; opacity: 0.35; pointer-events: none;
             background: 
@@ -30,11 +30,7 @@
             animation: lineShift 15s infinite linear;
         }
         
-        .universe-overlay {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;
-            background: radial-gradient(circle at center, transparent 15%, var(--matte-black) 85%);
-        }
-        
+        .universe-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; background: radial-gradient(circle at center, transparent 15%, var(--matte-black) 85%); }
         .container { max-width: 850px; width: 100%; margin: 0 auto; padding: 60px 20px; text-align: center; position: relative; z-index: 1; }
         h1 { color: #ffffff; font-size: 3.5rem; text-transform: uppercase; letter-spacing: 12px; margin: 0 0 10px 0; font-weight: 900; text-shadow: 0 0 15px var(--neon-pink), 0 0 35px var(--neon-pink); }
         .sub-tag { color: var(--electric-blue); font-size: 1.1rem; letter-spacing: 5px; font-weight: bold; text-transform: uppercase; text-shadow: 0 0 10px var(--electric-blue); margin-bottom: 50px; }
@@ -47,7 +43,7 @@
         .gateways { display: flex; flex-direction: column; gap: 30px; margin-top: 60px; }
         @media(min-width: 600px) { .gateways { flex-direction: row; } }
         
-        /* ОБТЕКАЕМЫЕ КНОПКИ DUCATI С ЛЕВИТАЦИЕЙ */
+        /* ОБТЕКАЕМЫЕ КНОПКИ DUCATI С АНИМАЦИЕЙ ЛЕВИТАЦИИ */
         .btn { flex: 1; padding: 22px; text-transform: uppercase; font-weight: 900; font-size: 1.1rem; letter-spacing: 3px; text-decoration: none; border: 3px solid; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; text-align: center; border-radius: 50px; position: relative; }
         .btn-survive { color: #ffffff; border-color: var(--neon-pink); background: rgba(255, 0, 127, 0.04); box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); animation: floatPink 4s infinite ease-in-out; }
         .btn-survive:hover { background: var(--neon-pink); color: #000000; letter-spacing: 5px; box-shadow: 0 0 35px var(--neon-pink), 0 0 70px var(--neon-pink); transform: translateY(-4px) scale(1.02); }
