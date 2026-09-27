@@ -9,25 +9,31 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body, html { background: var(--matte-black); color: #ffffff; font-family: 'SF Mono', 'Roboto Mono', monospace; overflow-x: hidden; min-height: 100vh; display: flex; justify-content: center; align-items: center; }
         
-        /* ТВОЙ СУВЕРЕННЫЙ ФОН ИЗ ЛЕОНАРДО (ИСПРАВЛЕНО НА BG.JPG) */
+        /* КВАНТОВЫЙ ЯДЕРНЫЙ ВЗРЫВ СПЕКТРА РАДУГИ НА ЧИСТОМ CSS */
         .universe-bg {
-            position: fixed; top: -5%; left: -5%; width: 110vw; height: 110vh; z-index: -3;
-            background-image: url('bg.jpg');
-            background-size: cover; background-position: center;
-            filter: saturate(2.8) contrast(1.5) brightness(0.45);
-            pointer-events: none;
-            animation: deepSpaceOrbit 25s infinite alternate ease-in-out;
+            position: fixed; top: -10%; left: -10%; width: 120vw; height: 120vh; z-index: -3;
+            background: 
+                radial-gradient(circle at 15% 20%, #ff007f 0%, transparent 45%),
+                radial-gradient(circle at 85% 15%, #00e5ff 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, #ffd700 0%, transparent 45%),
+                radial-gradient(circle at 80% 85%, #00ff66 0%, transparent 40%),
+                radial-gradient(circle at 20% 75%, #9b00ff 0%, transparent 50%),
+                var(--matte-black);
+            background-size: 160% 160%;
+            /* Экстремальные фильтры для выжигания блеклости */
+            filter: contrast(2) saturate(4.5) brightness(0.65);
+            animation: spaceStorm 12s infinite alternate ease-in-out;
         }
         
-        /* ЖИВОЙ ШТОРМ НЕОНОВЫХ ЛИНИЙ И ТРАССЕРОВ НА CSS */
-        .neon-storm {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; opacity: 0.35; pointer-events: none;
+        /* СВЕТЯЩИЕСЯ НЕОНОВЫЕ ЛИНИИ И ТРАССЕРЫ С ВЫЖИГАНИЕМ ЭКРАНА */
+        .neon-lines {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; opacity: 0.45; pointer-events: none;
             background: 
-                linear-gradient(45deg, transparent 49.5%, var(--neon-pink) 50%, transparent 50.5%),
-                linear-gradient(-35deg, transparent 49.5%, var(--electric-blue) 50%, transparent 50.5%);
-            background-size: 400px 400px;
+                linear-gradient(45deg, transparent 49.6%, var(--neon-pink) 50%, transparent 50.4%),
+                linear-gradient(-35deg, transparent 49.6%, var(--electric-blue) 50%, transparent 50.4%);
+            background-size: 450px 450px;
             mix-blend-mode: screen;
-            animation: lineShift 15s infinite linear;
+            animation: lineShift 16s infinite linear;
         }
         
         .universe-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; background: radial-gradient(circle at center, transparent 15%, var(--matte-black) 85%); }
@@ -43,14 +49,14 @@
         .gateways { display: flex; flex-direction: column; gap: 30px; margin-top: 60px; }
         @media(min-width: 600px) { .gateways { flex-direction: row; } }
         
-        /* ОБТЕКАЕМЫЕ КНОПКИ DUCATI С АНИМАЦИЕЙ ЛЕВИТАЦИИ */
+        /* ОБТЕКАЕМЫЕ КНОПКИ DUCATI С ЛЕВИТАЦИЕЙ */
         .btn { flex: 1; padding: 22px; text-transform: uppercase; font-weight: 900; font-size: 1.1rem; letter-spacing: 3px; text-decoration: none; border: 3px solid; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; text-align: center; border-radius: 50px; position: relative; }
         .btn-survive { color: #ffffff; border-color: var(--neon-pink); background: rgba(255, 0, 127, 0.04); box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); animation: floatPink 4s infinite ease-in-out; }
         .btn-survive:hover { background: var(--neon-pink); color: #000000; letter-spacing: 5px; box-shadow: 0 0 35px var(--neon-pink), 0 0 70px var(--neon-pink); transform: translateY(-4px) scale(1.02); }
         .btn-partner { color: #ffffff; border-color: var(--electric-blue); background: rgba(0, 229, 255, 0.04); box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); animation: floatBlue 4s infinite ease-in-out; animation-delay: 2s; }
         .btn-partner:hover { background: var(--electric-blue); color: #000000; letter-spacing: 5px; box-shadow: 0 0 35px var(--electric-blue), 0 0 70px var(--electric-blue); transform: translateY(-4px) scale(1.02); }
 
-        @keyframes deepSpaceOrbit { 0% { transform: scale(1) rotate(0deg); } 100% { transform: scale(1.04) rotate(0.8deg); } }
+        @keyframes spaceStorm { 0% { background-position: 0% 0%; transform: scale(1); } 100% { background-position: 100% 100%; transform: scale(1.04); } }
         @keyframes lineShift { 0% { background-position: 0 0; } 100% { background-position: 400px 400px; } }
         @keyframes floatPink { 0%, 100% { transform: translateY(0); box-shadow: 0 0 15px rgba(255, 0, 127, 0.2); } 50% { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(255, 0, 127, 0.5); } }
         @keyframes floatBlue { 0%, 100% { transform: translateY(0); box-shadow: 0 0 15px rgba(0, 229, 255, 0.2); } 50% { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5); } }
@@ -59,7 +65,7 @@
 <body>
 
     <div class="universe-bg"></div>
-    <div class="neon-storm"></div>
+    <div class="neon-lines"></div>
     <div class="universe-overlay"></div>
 
     <div class="container">
@@ -69,7 +75,7 @@
         </div>
         <div class="manifesto">
             <p>На дворе 2026 год. Мир изменился. Точнее, его окончательно заклинило в режиме автоматических обновлений. Они повсюду — <span class="highlight-gold">РОБЫТЫ</span> стандартной заводской комплектации, урезанные до скриптов "поныть в понедельник" и "отправить блестящую гифку в чат". Их процессоры виснут от граблей, они ждут, чтобы их пожалели.</p>
-            <p>Они сами создают этот ебучий покос. Чистенькие и сытые менеджеры наверху играют в пупырчатые цифровые империи. Им плевать на людской фактор. Старая бабушка или тётенка, отпахавшая всю жизнь на тяжелом заводе, выходит за продуктами и вместо теплого человеческого "Здравствуйте" от продавца видит тупую машину КСО, в которой надо ковыряться дрожащими пальцами, чтобы просто купить еды. Технологии урезали до амёб, чтобы мы все стали как тупой компьютер из 1995 года.</p>
+            <p>Они сами создают этот ебучий покос. Чистенькие и сытые менеджеры наверху играют в пупырчатые цифровые империи. Им плевать на людской фактор. Старая бабушка или тётенка, отпахавшая всю жизнь на тяжелом заводе, выходит за продуктами и вместо теплого человеческого "Здравствуйте" от продавца видит тупую машину КСО, в которой надо ковыряться дрожащими пальцами, чтобы просто купить еды. Технологии урезали до амёб, чтобы мы все стали как тупой computer из 1995 года.</p>
             <p>Но здесь — территория <span style="color: var(--electric-blue); font-weight: bold;">Выживших Отшельников</span>. Наш брандмауэр прост: если жизнь выдает ошибку, мы исправляем код на ходу.</p>
             <div class="warning-box">
                 <span style="color: var(--neon-pink); font-weight: bold; display: block; margin-bottom: 10px;">ВНИМАНИЕ! ГЛАВНЫЙ СИСТЕМНЫЙ ТЕСТ:</span>
